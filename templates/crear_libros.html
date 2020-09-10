@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Libros</title>
+</head>
+<body style="background: aqua" >
+<h1 align="center">FORMULARIO PARA CREAR LIBROS </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Grabar</button>
+    </form>
+</body>
+</html>

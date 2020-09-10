@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LISTA LIBROS</title>
+</head>
+<body>
+<table style="border: solid" class="table" >
+    <thead>
+        <tr>
+            <th>ID Libro</th>
+            <th>ISBN</th>
+            <th>TITULO</th>
+            <th>AUTOR</th>
+            <th>EDITORIAL</th>
+            <th>PRECIO</th>
+            <th>OPCION</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if  Libro  %}
+        {% for Libro in Libro %}
+            <tr>
+                <td>{{ Libro.id }}</td>
+                <td>{{ Libro.isbn }}</td>
+                <td>{{ Libro.Autor.nombre }}</td>
+                <td>{{ Libro.Editorial.nombre }}</td>
+                <td>{{ Libro.precio }}</td>
+                <td>
+                    <a href="/editar_libro/{{ Libro.id }}"><span class="glyphicon glyphicon-pencil" >Editar</span></a>
+                                      <a style="background: #bf2718" href="/eliminar_libro/{{ Libro.id }}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+        <h1>No hay Registros </h1>
+        {% endif %}
+    </tbody>
+
+</body>
+</html>
